@@ -28,7 +28,7 @@ public class LineRepository {
 
 
         ));
-        LOGGER.info("Retrieving lines ... {}", lines);
+        // LOGGER.info("Retrieving lines ... {}", lines);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving lines from database", LocalDate.now());
         return lines;
     }

@@ -26,7 +26,7 @@ public class PriceRepository {
                 resultSet.getString("currency")
 
         ));
-        LOGGER.info("Retrieving prices ... {}", prices);
+        // LOGGER.info("Retrieving prices ... {}", prices);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving prices from database", LocalDate.now());
         return prices;
     }

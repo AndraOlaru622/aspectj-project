@@ -31,14 +31,14 @@ public class DriverRepository {
 
 
             ));
-        LOGGER.info("Retrieving drivers ... {}", drivers);
+        // LOGGER.info("Retrieving drivers ... {}", drivers);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving drivers from database", LocalDate.now());
         return drivers;
     }
 
     public List<Driver> addDriver(Driver p) {
         jdbcTemplate.update(Querys.ADD_DRIVER, p.getFirst_name(), p.getLast_name(), p.getAge(), p.getYear_employment(), p.getSalary(), p.getIdLocation());
-        LOGGER.info("Adding driver to database ... {}", p);
+        // LOGGER.info("Adding driver to database ... {}", p);
         jdbcTemplate.update(Querys.ADD_ACTION, "Adding driver to database", LocalDate.now());
         return getDrivers();
     }
@@ -51,7 +51,7 @@ public class DriverRepository {
 
     public List<Driver> updateDriver(Driver p, int id) {
         jdbcTemplate.update(Querys.UPDATE_DRIVER, p.getFirst_name(), p.getLast_name(), p.getAge(), p.getYear_employment(), p.getSalary(), p.getIdLocation(), id);
-        LOGGER.info("Updating driver to database ... {}", p);
+        // LOGGER.info("Updating driver to database ... {}", p);
         jdbcTemplate.update(Querys.ADD_ACTION, "Updating driver to database", LocalDate.now());
         return getDrivers();
     }

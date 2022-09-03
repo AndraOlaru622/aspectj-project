@@ -24,7 +24,7 @@ public class LocationRepository {
                 resultSet.getString("country")
 
         ));
-        LOGGER.info("Retrieving locations ... {}", locations);
+        // LOGGER.info("Retrieving locations ... {}", locations);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving locations from database", LocalDate.now());
         return locations;
     }

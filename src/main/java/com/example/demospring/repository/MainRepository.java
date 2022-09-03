@@ -29,7 +29,7 @@ public class MainRepository {
                 resultSet.getString("country")
 
         ));
-        LOGGER.info("Retrieving driver's locations ... {}", driver_locations);
+        // LOGGER.info("Retrieving driver's locations ... {}", driver_locations);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving driver's locations from database", LocalDate.now());
         return driver_locations;
     }
@@ -43,7 +43,7 @@ public class MainRepository {
                 resultSet.getString("service_condition")
 
         ));
-        LOGGER.info("Retrieving driver's vehicles ... {}", driver_vehicles);
+        // LOGGER.info("Retrieving driver's vehicles ... {}", driver_vehicles);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving driver's vehicles from database", LocalDate.now());
         return driver_vehicles;
     }
@@ -60,7 +60,7 @@ public class MainRepository {
                 resultSet.getInt("duration")
 
         ));
-        LOGGER.info("Retrieving vehicle's lines ... {}", vehicle_lines);
+        // LOGGER.info("Retrieving vehicle's lines ... {}", vehicle_lines);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving vehicle's line from database", LocalDate.now());
         return vehicle_lines;
     }
@@ -75,7 +75,7 @@ public class MainRepository {
                 resultSet.getString("currency")
 
         ));
-        LOGGER.info("Retrieving line's price ... {}", lines_price);
+        // LOGGER.info("Retrieving line's price ... {}", lines_price);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving line's price from database", LocalDate.now());
         return lines_price;
     }

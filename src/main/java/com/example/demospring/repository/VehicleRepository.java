@@ -29,7 +29,7 @@ public class VehicleRepository {
 
 
         ));
-        LOGGER.info("Retrieving vehicles ... {}", vehicles);
+        // LOGGER.info("Retrieving vehicles ... {}", vehicles);
         jdbcTemplate.update(Querys.ADD_ACTION, "Retrieving vehicles from database", LocalDate.now());
         return vehicles;
     }

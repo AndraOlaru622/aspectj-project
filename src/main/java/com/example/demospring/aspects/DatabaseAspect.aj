@@ -7,7 +7,8 @@ public aspect DatabaseAspect {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DatabaseAspect.class);
 
-    pointcut anyGetPutPostDeleteMappingMethodPointCut() : execution(* com.example.demospring.service.DriverService.*(..)) && @annotation(org.springframework.web.bind.annotation.PostMapping) ||
+    pointcut anyGetPutPostDeleteMappingMethodPointCut() : execution(* com.example.demospring.controller.*.*(..))
+            && @annotation(org.springframework.web.bind.annotation.PostMapping) ||
             @annotation(org.springframework.web.bind.annotation.PutMapping) ||
             @annotation(org.springframework.web.bind.annotation.DeleteMapping) ||
             @annotation(org.springframework.web.bind.annotation.GetMapping);
@@ -21,12 +22,8 @@ public aspect DatabaseAspect {
         String callerFunction = operationSignature[operationSignature.length - 1];
         String callerController = operationSignature[operationSignature.length - 2];
 
-        if(callerController.equals("BasicErrorController")) {
-            LOGGER.info("*****Database Operation Error ");
-        } else {
-            LOGGER.info("*****Caller Controller: " + callerController);
-            LOGGER.info("*****Caller Function: " + callerFunction);
-        }
+        LOGGER.info("*****Caller Controller: " + callerController);
+        LOGGER.info("*****Caller Function: " + callerFunction);
     }
 
 }
